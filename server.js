@@ -61,10 +61,15 @@ app.delete('/:name', (req, res)=> {
         
         else{
             console.log('connecton with DB established');
-            console.log(req.params.name);
+                const { name } = req.params;
+                db.collection('data').findOneandDelete({ name }, (err, r)=> {
+                    if(err) 
+                        console.log('deleting failed')
+                    else
+                        console.log('r.value.b');
+                })
             res.end('thinking');
         }
-
         db.close();
     })
 })
