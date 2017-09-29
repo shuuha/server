@@ -45,7 +45,7 @@ app.post('/', (req, res) => {
         else {            
             console.log(req.body);
             // db.collection('data').updateOne()
-            res.write(req.body)
+            res.write(JSON.stringify(req.body));
             res.end('well');
         db.close();
         }
