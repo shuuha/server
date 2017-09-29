@@ -62,7 +62,7 @@ app.delete('/:name', (req, res)=> {
         else{
             console.log('connecton with DB established');
                 const { name } = req.params;
-                db.collection('data').findOneandDelete({ name }, (err, r)=> {
+                db.collection('data').findOneAndDelete({ name }, (err, r)=> {
                     if(err) 
                         console.log('deleting failed')
                     else
