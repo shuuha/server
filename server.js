@@ -37,12 +37,12 @@ app.get('/', (req, res) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.post('/', (req, res) => {
+app.post('/', bodyPaserser, (req, res) => {
     MongoClient.connect(url, (err, db) => {
         if(err) 
             console.log('post method: error', err);
         else {            
-            console.log(req.body);
+            console.log(bodyPaserser);
             // db.collection('data').updateOne()
             // res.write(req.body)
             res.end('well');
