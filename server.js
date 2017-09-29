@@ -25,7 +25,7 @@ app.get('/', (req,res) => {
                 }
                 else res.end('nothing found');
 
-                db.close();
+                // db.close();
             })
             
         }
