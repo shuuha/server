@@ -47,7 +47,7 @@ app.post('/', (req, res) => {
             if(req.body)
                 db.collection('data').insertOne(req.body);
             
-            res.end(JSON.stringify(req.body), ' is added to database');
+            res.end(`${JSON.stringify(req.body)},  is added to database`);
         db.close();
         }
     })    
