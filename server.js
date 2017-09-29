@@ -1,9 +1,13 @@
 var express = require('express');
+const routes = require('./config/routes');
 
 const app = express();
 
 app.get('/', (req, res) => {
-    console.log(req.url);
+    
+    }
+
+
     res.send('Hello')
 })
 
