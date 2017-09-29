@@ -43,8 +43,9 @@ app.post('/', (req, res) => {
             console.log('post method: error', err);
         else {            
             console.log(req.body);
-            // db.collection('data').updateOne()            
-            res.end(req.body);
+            // db.collection('data').updateOne()
+            res.write(req.body)
+            res.end('well');
         }
 
 
