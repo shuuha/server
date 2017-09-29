@@ -34,15 +34,15 @@ app.get('/', (req, res) => {
     })    
 })
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 
-app.post('/', bodyParser, (req, res) => {
+app.post('/', bodyParser.json(), (req, res) => {
     MongoClient.connect(url, (err, db) => {
         if(err) 
             console.log('post method: error', err);
         else {            
-            console.log(bodyParser);
+            console.log(req.body);
             // db.collection('data').updateOne()
             // res.write(req.body)
             res.end('well');
