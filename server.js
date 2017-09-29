@@ -42,7 +42,7 @@ app.use(bodyParser.json());
 app.post('/', (req, res) => {
     MongoClient.connect(url, (err, db) => {
         if(err) 
-            console.log('post method: error', err);
+            console.log('error, unable to connect to database', err);
         else {            
             console.log(req.body);
             if(req.body)
@@ -53,6 +53,22 @@ app.post('/', (req, res) => {
         }
     })    
 })
+
+app.delete('/:name', (req, res)=> {
+    MongoClient.connect(url, (err, db)=> {
+        if(err)
+            console.log('unable to connect to database', err);
+        
+        else{
+            console.log('connecton with DB established');
+            console.log(req.params);
+            res.end('thinking');
+        }
+
+        db.close();
+    })
+})
+
 
 app.listen(80, () => {
     console.log('listening on port 80');
