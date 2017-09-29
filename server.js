@@ -35,10 +35,9 @@ app.get('/', (req, res) => {
 })
 
 // app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
-var jsonParser = bodyParser.json({type: 'application/json'});
+app.use(bodyParser.json({ extended: true }));
 
-app.post('/', jsonParser, (req, res) => {
+app.post('/', (req, res) => {
     MongoClient.connect(url, (err, db) => {
         if(err) 
             console.log('post method: error', err);
@@ -48,8 +47,7 @@ app.post('/', jsonParser, (req, res) => {
             // res.write(req.body)
             res.end('well');
         }
-
-
+        
         db.close();
     })    
 })
