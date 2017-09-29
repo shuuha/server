@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 // const routes = require('./config/routes');
 
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/data';
+var url = 'mongodb://localhost:27017/local';
 
 const app = express();
 
