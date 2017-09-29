@@ -4,8 +4,7 @@ var bodyParser = require('body-parser');
 // const routes = require('./config/routes');
 
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/test';
-
+var url = 'mongodb://localhost:27017/data';
 
 const app = express();
 
@@ -16,22 +15,20 @@ app.get('/', (req, res) => {
         else {
             console.log('connection established');
             const collection = db.collection('data');
-            const item = collection.find({id: "1"});
-            // collection.find().toArray((err, result) => {
-            //     if(err)
-            //         console.log(' error ', err);
 
-            //     else if(result.length){
-            //         res.end(result);
-            //     }
+            collection.find().toArray((err, result) => {
+                if(err)
+                    console.log(' error ', err);
+
+                else if(result.length){
+                    res.end(result);
+                }
                 
-            //     else res.end('nothing found');
+                else res.end('nothing found');
 
-            // })
-            if(item)
-                res.end(item);
-
-            db.close();
+            })
+            
+                db.close();
         }
     })    
 })
