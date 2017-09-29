@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
                     console.log(' error ', err);
 
                 else if(result.length){
-                    res.end(result);
+                    res.end(JSON.sringify(result));
                 }
                 
                 else res.end('nothing found');
