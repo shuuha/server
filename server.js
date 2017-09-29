@@ -9,27 +9,29 @@ var url = 'mongodb://localhost:27017/test';
 
 const app = express();
 
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     MongoClient.connect(url, (err, db) => {
         if(err) 
             console.log('error', err);
         else {
             console.log('connection established');
             const collection = db.collection('data');
+            const item = collection.find({id: "1"});
+            // collection.find().toArray((err, result) => {
+            //     if(err)
+            //         console.log(' error ', err);
 
-            collection.find().toArray((err, result) => {
-                if(err)
-                    console.log(' error ', err);
-
-                else if(result.length){
-                    res.end(result);
-                }
+            //     else if(result.length){
+            //         res.end(result);
+            //     }
                 
-                else res.end('nothing found');
+            //     else res.end('nothing found');
 
-            })
-            
-                db.close();
+            // })
+            if(item)
+                res.end(item);
+
+            db.close();
         }
     })    
 })
