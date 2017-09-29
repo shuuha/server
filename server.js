@@ -44,9 +44,10 @@ app.post('/', (req, res) => {
             console.log('post method: error', err);
         else {            
             console.log(req.body);
-            // db.collection('data').updateOne()
-            res.write(JSON.stringify(req.body));
-            res.end('well');
+            if(req.body)
+                db.collection('data').insertOne(req.body);
+            
+            res.end(JSON.stringify(req.body), ' is added to database');
         db.close();
         }
     })    
