@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
-var jsonParser = bodyParser.json({type: 'application'});
+var jsonParser = bodyParser.json({type: 'application/json'});
 
 app.post('/', jsonParser, (req, res) => {
     MongoClient.connect(url, (err, db) => {
