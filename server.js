@@ -61,7 +61,7 @@ app.delete('/:name', (req, res)=> {
         
         else{
             console.log('connecton with DB established');
-            console.log(req.params);
+            console.log(req.params.name);
             res.end('thinking');
         }
 
