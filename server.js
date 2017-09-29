@@ -1,4 +1,6 @@
 var express = require('express');
+const app = express();
+
 var bodyParser = require('body-parser');
 
 // const routes = require('./config/routes');
@@ -6,7 +8,6 @@ var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://localhost:27017/data';
 
-const app = express();
 
 app.get('/', (req, res) => {
     MongoClient.connect(url, (err, db) => {
