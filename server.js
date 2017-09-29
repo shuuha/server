@@ -38,10 +38,9 @@ app.post('/', (req, res) => {
     MongoClient.connect(url, (err, db) => {
         if(err) 
             console.log('post method: error', err);
-        else {
-            console.log('connection established');
-            console.log(req.body);
-            // db.collection('data').updateOne()
+        else {            
+            console.log(req.bodyParser);
+            // db.collection('data').updateOne()            
             res.end('well')
         }
 
