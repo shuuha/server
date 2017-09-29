@@ -40,7 +40,7 @@ app.post('/', (req, res) => {
             console.log('post method: error', err);
         else {
             console.log('connection established');
-            console.log(req.bodyParser);
+            console.log(req);
             // db.collection('data').updateOne()
         }
 
