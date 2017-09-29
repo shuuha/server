@@ -39,7 +39,7 @@ app.post('/', (req, res) => {
         if(err) 
             console.log('post method: error', err);
         else {            
-            console.log(req.bodyParser);
+            console.log(req.bodyParser.json());
             // db.collection('data').updateOne()            
             res.end('well')
         }
