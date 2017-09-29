@@ -11,10 +11,10 @@ const app = express();
 app.get('/', (req, res) => {
     MongoClient.connect(url, (err, db) => {
         if(err) 
-            console.log('error', err);
+            console.log('cannot connect to MangoDb', err);
         else {
             console.log('connection established');
-            console.log(db.getCollectionNames());
+            
             const collection = db.collection('data');
 
             collection.find().toArray((err, result) => {
