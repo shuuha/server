@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
                 else if(result.length){
                     console.log('sending info on data collection');
-                    res.end(JSON.sringify(result));
+                    res.end(JSON.stringify(result));
                 }
                 
                 else res.end('nothing found');
