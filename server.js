@@ -32,19 +32,19 @@ app.get('/', (req,res) => {
     })    
 })
 
-app.post('/', (req, res) => {
-    MongoClient.connect(url, (err, db) => {
-        if(err) 
-            console.log('post method: error', err);
-        else {
-            console.log('connection established');
-            console.log(req.bodyParser);
-            // db.collection('data').updateOne()
-        }
+// app.post('/', (req, res) => {
+//     MongoClient.connect(url, (err, db) => {
+//         if(err) 
+//             console.log('post method: error', err);
+//         else {
+//             console.log('connection established');
+//             console.log(req.bodyParser);
+//             // db.collection('data').updateOne()
+//         }
 
-        db.close();
-    })    
-})
+//         db.close();
+//     })    
+// })
 
 app.listen(80, () => {
     console.log('listening on port 80');
