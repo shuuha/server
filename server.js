@@ -18,11 +18,12 @@ app.get('/', (req, res) => {
             
             const collection = db.collection('data');
 
-            collection.find().toArray((err, result) => {
+            collection.find({}).toArray((err, result) => {
                 if(err)
                     console.log(' error ', err);
 
                 else if(result.length){
+                    console.log('sending info on data collection');
                     res.end(JSON.sringify(result));
                 }
                 
