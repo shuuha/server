@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
             console.log('error', err);
         else {
             console.log('connection established');
+            console.log(db.db.getCollectionNames());
             const collection = db.collection('data');
 
             collection.find().toArray((err, result) => {
