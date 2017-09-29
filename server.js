@@ -19,15 +19,17 @@ app.get('/', (req,res) => {
 
             collection.find().toArray((err, result) => {
                 if(err)
-                    console.log(' error ', err)
+                    console.log(' error ', err);
+
                 else if(result.length){
-                    res.end(result)
+                    res.end(result);
                 }
+                
                 else res.end('nothing found');
 
-                db.close();
             })
             
+                db.close();
         }
     })    
 })
