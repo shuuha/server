@@ -45,9 +45,10 @@ app.post('/', (req, res) => {
             console.log(req.body);
             // db.collection('data').updateOne()
             // res.write(req.body)
-            res.end('well');
+            if(!req.body) 
+                res.end('well');
+            res.end(req.body);
         }
-        
         db.close();
     })    
 })
