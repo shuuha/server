@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 // const routes = require('./config/routes');
 
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/data';
+var url = 'mongodb://localhost:27017/local';
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
         else {
             console.log('connection established');
             
-            const collection = db.collection('data');
+            const collection = db.collection('local');
 
             collection.find().toArray((err, result) => {
                 if(err)
