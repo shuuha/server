@@ -47,8 +47,8 @@ app.post('/', (req, res) => {
             // db.collection('data').updateOne()
             res.write(req.body)
             res.end('well');
-        }
         db.close();
+        }
     })    
 })
 
