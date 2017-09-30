@@ -1,12 +1,10 @@
 var express = require('express');
 
-const users = require('./routes');
+const users = require('./routes/users');
 
 const app = express();
 
 app.use(users);
-
-const {fetchAll} = require('./models/helpers');
 
 
 // const app = express();
