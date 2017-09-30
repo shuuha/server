@@ -3,18 +3,11 @@ const MongoClient = require('mongodb').MongoClient;
 class MongoDbRepository{
 
     constructor(){
-        this.URL = 'mongodb://localhost:27017/data';
-        this.db = {};
+        this.URL = 'mongodb://localhost:27017/data';        
     }    
 
     connect(){
-       return MongoClient.connect(this.URL, (err, db) => {
-            if(err)
-                console.log('error in connecting to db', err);
-                
-            else    
-                this.db = db;                
-        })
+        return MongoClient.connect(this.URL, (err, db));
     }
 
     update(){
@@ -27,14 +20,19 @@ class MongoDbRepository{
 
     getAll(){
         return this.connect()
-                .then(arg => this.db.collection('data').find({}).toArray((err, r)=> {
-                    if(err)
-                        console.log('error in getting all the data');
-                        return r
+            .then(db => db.collection('data').find({}).toArray(err, r))
+            .then(result => result)
+            .catch(err => console.log(err));
+
+        // return this.connect()
+        //         .then(arg => this.db.collection('data').find({}).toArray((err, r)=> {
+        //             if(err)
+        //                 console.log('error in getting all the data');
+        //                 return r
                     
-                    this.db.close();                
-                }))
-                .catch(err => console.log(err));
+        //             this.db.close();                
+        //         }))
+                // .catch(err => console.log(err));
     }
 
     insert(){
