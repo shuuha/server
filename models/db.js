@@ -1,8 +1,8 @@
 const MongoClient = require('mongodb').MongoClient;
 
 class MongoDbRepository{
-    static URL = 'mongodb://localhost:27017/data';
-
+    
+    URL = 'mongodb://localhost:27017/data';
     db;
 
     connect(){
