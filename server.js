@@ -86,7 +86,6 @@ app.use(users);
 // })
 
 
-app.listen(80, () => {
-    console.log(fetchAll);
+app.listen(80, () => {    
     console.log('listening on port 80');
 })
