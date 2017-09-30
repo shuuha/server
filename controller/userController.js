@@ -19,7 +19,7 @@ class UserController{
     post(req, res){
         const { name } = req.body;
 
-        db.connect(db.post(name))
+        db.connect(db.post(req))
             .then( () => res.end('updated'));
     }
 

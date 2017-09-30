@@ -10,14 +10,14 @@ class MongoDbRepository{
     connect(func){
         return MongoClient.connect(this.URL)
                 .then(db => this.db = db)
-                .then(func.bind(this, req))
+                .then(func.bind(this))
                 .then(result => { 
                         this.db.close(); 
                         return result})
                 .catch(this.err);
     }
 
-    update(db, req){
+    update(req){
         this.db.collection('data').updateOne({ name }, { name: 'muylaydec'});
     }
 
