@@ -6,7 +6,7 @@ const app = express();
 
 app.use(users);
 
-
+const fetchAll = requrie('./models/helpers/fetchAll');
 
 
 // const app = express();
@@ -89,5 +89,6 @@ app.use(users);
 
 
 app.listen(80, () => {
+    console.log(fetchAll);
     console.log('listening on port 80');
 })
