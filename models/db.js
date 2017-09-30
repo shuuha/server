@@ -26,13 +26,15 @@ class MongoDbRepository{
     }
 
     getAll(){
-        this.connect().
-            this.db.collection('data').find({}).toArray((err, r)=> {
-                if(err)
-                    console.log('error in getting all the data');
+        return this.connect().
+                then(arg => this.db.collection('data').find({}).toArray((err, r)=> {
+                    if(err)
+                        console.log('error in getting all the data');
+                        return r
+                    
                     this.db.close();                
-                    return r;
-        });
+                }))
+                .catch(err => console.log(err));
     }
 
     insert(){
