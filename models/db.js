@@ -35,8 +35,9 @@ class MongoDbRepository{
                     if(err)
                         console.log('error in getting all the data');
                     
-                    else
-                        return r;
+                    else{
+                        console.log(r);
+                        return r }
             })}
             db.close();
         })
