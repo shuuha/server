@@ -1,9 +1,12 @@
 const MongoClient = require('mongodb').MongoClient;
 
 class MongoDbRepository{
-    
-    URL = 'mongodb://localhost:27017/data';
-    db;
+
+    constructor(){
+        this.URL = 'mongodb://localhost:27017/data';
+    }
+
+     db;
 
     connect(){
         MongoClient.connect(this.URL, (err, db) => {
