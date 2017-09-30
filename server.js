@@ -45,12 +45,13 @@ app.post('/', (req, res) => {
             console.log('error, unable to connect to database', err);
         else {            
             console.log(req.body);
-            if(req.body)
+            if(req.body){
                 const { id, page } = req.body;
                 // db.collection('data').insertOne(req.body);
                 db.collection('data').update({id, page}, req.body);
             
-            res.end(`${JSON.stringify(req.body)},  is added to database`);
+                res.end(`${JSON.stringify(req.body)},  is added to database`)
+            }
         db.close();
         }
     })    
