@@ -20,12 +20,7 @@ class UserController{
         const { name } = req.body;
 
         db.connect(db.post(name))
-            .then(result => {
-                if(result.length)
-                    res.end(JSON.stringify(result));
-                else 
-                    res.end('nothing found');
-            })
+            .then( () => res.end('updated'));
     }
 
     delete(){
