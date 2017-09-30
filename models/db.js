@@ -14,6 +14,7 @@ class MongoDbRepository{
                 
             else    
                 this.db = db;
+                console.log(this.db);
         })
     }
 
