@@ -2,13 +2,14 @@ const db = require('../models/db');
 
 class UserController{
     get(req, res){        
-        let result = db.getAll();
-        console.log(result);
+        db.getAll()
+            .then(result => {
+                if(result.length)
+                    res.end(JSON.stringify(result));
 
-        if(result.length)
-            res.end(JSON.stringify(result));
-        
-        else res.end('nothing found');
+                else 
+                    res.end('nothing found');
+            })       
     }
 
     post(){
