@@ -19,9 +19,12 @@ class MongoDbRepository{
     }
 
     getAll(){
-        return this.connect()
-            .then(db => db.collection('data').find({}).toArray())
-            .then(result => {return result})
+        return this.connect()            
+            .then(db => {                    
+                    const result = collection('data').find({}).toArray();
+                    db.close();
+                    return result;
+                })            
             .catch(err => console.log(err));
 
         // return this.connect()
