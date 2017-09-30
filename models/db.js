@@ -7,7 +7,7 @@ class MongoDbRepository{
         this.db = {};
     }    
 
-    connect= () =>{
+    connect = () =>{
         MongoClient.connect(this.URL, (err, db) => {
             if(err)
                 console.log('error in connecting to db', err);
