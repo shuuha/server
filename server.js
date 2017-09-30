@@ -6,7 +6,7 @@ const app = express();
 
 app.use(users);
 
-const fetchAll = require('./models/helpers/fetchAll');
+const {fetchAll} = require('./models/helpers');
 
 
 // const app = express();
