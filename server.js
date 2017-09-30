@@ -48,7 +48,7 @@ app.post('/', (req, res) => {
             if(req.body){
                 const { id, page } = req.body;
                 // db.collection('data').insertOne(req.body);
-                db.collection('data').update({id, page}, req.body);
+                db.collection('data').updateOne({id, page}, req.body, true);
             
                 res.end(`${JSON.stringify(req.body)},  is added to database`)
             }
