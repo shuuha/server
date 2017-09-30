@@ -10,7 +10,7 @@ class MongoDbRepository{
     connect(func){
         return MongoClient.connect(this.URL)
                 .then(db => this.db = db)
-                .then(func(req).bind(this))
+                .then(func.bind(this))
                 .then(result => { 
                         this.db.close(); 
                         return result})
