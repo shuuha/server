@@ -7,14 +7,13 @@ class MongoDbRepository{
         this.db = {};
     }    
 
-    connect(){
+    connect= () =>{
         MongoClient.connect(this.URL, (err, db) => {
             if(err)
                 console.log('error in connecting to db', err);
                 
             else    
-                this.db = db;
-                console.log(this.db);
+                this.db = db;                
         })
     }
 
@@ -26,8 +25,8 @@ class MongoDbRepository{
         this.db.close();        
     }
 
-    getAll(){
-        this.connect();       
+    getAll = () => {
+        this.connect();
 
         this.db.collection('data').find({}).toArray((err, r)=> {
             if(err)
