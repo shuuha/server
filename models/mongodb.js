@@ -74,4 +74,18 @@ class SomeController
         else
             res.end(JSON.stringify(items));
     }
+
+    timeout = (time) =>
+    {
+        return new Promise((resolve,reject)=>setTimeout(resolve,time))
+    }
+
+
+    test = async () =>
+    {
+        await this.timeout(100);
+    }
+
 }
+
+
