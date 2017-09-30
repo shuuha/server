@@ -7,7 +7,7 @@ class MongoDbRepository{
     }    
 
     connect(){
-        return MongoClient.connect(this.URL, (err, db));
+        return MongoClient.connect(this.URL);
     }
 
     update(){
@@ -20,7 +20,7 @@ class MongoDbRepository{
 
     getAll(){
         return this.connect()
-            .then(db => db.collection('data').find({}).toArray(err, r))
+            .then(db => db.collection('data').find({}).toArray())
             .then(result => result)
             .catch(err => console.log(err));
 
