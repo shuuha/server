@@ -3,7 +3,8 @@ const MongoClient = require('mongodb').MongoClient;
 class MongoDbRepository{
 
     constructor(){
-        this.URL = 'mongodb://localhost:27017/data';        
+        this.URL = 'mongodb://localhost:27017/data';
+        this.getAll = this.getAll.bind(this);
     }    
 
     connect(func){
