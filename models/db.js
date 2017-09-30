@@ -43,7 +43,7 @@ class MongoDbRepository{
             })}
             db.close();
         })
-        
+        console.log(result);
         return result;
     }
 
