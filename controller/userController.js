@@ -2,8 +2,8 @@ const db = require('../models/db');
 
 class UserController{
     get(req, res){        
-        let result = db.getAll()
-                        .then(res => res);
+        let result = db.getAll();
+        console.log(result);
 
         if(result.length)
             res.end(JSON.stringify(result));

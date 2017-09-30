@@ -20,7 +20,7 @@ class MongoDbRepository{
 
     result(result){
         console.log(result);
-        return result;    
+        return result;
     }
 
     getAll(){
