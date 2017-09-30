@@ -10,19 +10,15 @@ class MongoDbRepository{
     connect(func){
         return MongoClient.connect(this.URL)
                 .then(db => this.db = db)
-                .then(func.bind(this))
+                .then(func.bind(this, req))
                 .then(result => { 
                         this.db.close(); 
                         return result})
                 .catch(this.err);
     }
 
-    update(){
-        this.connect();
-
-
-
-        this.db.close();        
+    update(db, req){
+        return this.db.collection('data').updateOne({ name }, { name: 'muylaydec'});
     }
 
     err(err){
@@ -33,30 +29,12 @@ class MongoDbRepository{
         return this.db.collection('data').find({}).toArray();
     }
 
-    // getAll(){
-    //     return this.connect()
-    //         .then(db => {
-    //                 const result = db.collection('data').find({}).toArray();
-    //                 db.close();
-    //                 return result
-    //             })
-    //         .then(res => res)
-    //         .catch(err => console.log(err));
-    // }
-
-
-
     insert(){
-        this.connect();
-
-        this.db.close();
+     
     }
 
     remove(){
-        this.connect()
-
-
-        this.db.close();
+     
     }
 }
 

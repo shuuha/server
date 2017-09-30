@@ -1,5 +1,9 @@
 const db = require('../models/db');
 
+var bodyParser = require('body-parser');
+
+
+
 class UserController{
     get(req, res){
         db.connect(db.getAll)
@@ -12,8 +16,16 @@ class UserController{
             })
     }
 
-    post(){
+    post(req, res){
+        const { name } = req.body;
 
+        db.connect(db.post(name))
+            .then(result => {
+                if(result.length)
+                    res.end(JSON.stringify(result));
+                else 
+                    res.end('nothing found');
+            })
     }
 
     delete(){
