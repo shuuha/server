@@ -27,6 +27,8 @@ class MongoDbRepository{
 
     getAll(){
         // this.connect();
+
+        let result;
         MongoClient.connect(this.URL, (err, db) => {
             if(err)
                 console.log(err);
@@ -36,12 +38,13 @@ class MongoDbRepository{
                     if(err)
                         console.log('error in getting all the data');
                     
-                    else{
-                        console.log(r);
-                        return r }
+                    else
+                        result = r;                        
             })}
             db.close();
         })
+        
+        return result;
     }
 
     insert(){
