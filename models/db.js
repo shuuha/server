@@ -7,7 +7,7 @@ class MongoDbRepository{
         this.db = {};
     }    
 
-    connect = () =>{
+    connect(){
         MongoClient.connect(this.URL, (err, db) => {
             if(err)
                 console.log('error in connecting to db', err);
@@ -25,17 +25,21 @@ class MongoDbRepository{
         this.db.close();        
     }
 
-    getAll = () => {
-        this.connect();
-
-        this.db.collection('data').find({}).toArray((err, r)=> {
+    getAll(){
+        // this.connect();
+        MongoClient.connect(this.URL, (err, db) => {
             if(err)
-                console.log('error in getting all the data');
-
-                this.db.close();
-                
-                return r;
-        });
+                console.log(err);
+            else{            
+                db.collection('data').find({}).toArray((err, r)=> {
+                    if(err)
+                        console.log('error in getting all the data');
+                    
+                    else
+                        return r;
+            })}
+            db.close();
+        })
     }
 
     insert(){
