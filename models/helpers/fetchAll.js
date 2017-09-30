@@ -1,4 +1,5 @@
 function fetchAll(db){
+    db = db;
     return (req, res) => {
         db.collection('data').find({}).toArray((err, r)=> {
             if(err)
