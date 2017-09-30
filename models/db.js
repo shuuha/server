@@ -4,9 +4,8 @@ class MongoDbRepository{
 
     constructor(){
         this.URL = 'mongodb://localhost:27017/data';
-    }
-
-     db;
+        this.db = {};
+    }    
 
     connect(){
         MongoClient.connect(this.URL, (err, db) => {
