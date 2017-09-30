@@ -18,12 +18,17 @@ class MongoDbRepository{
         this.db.close();        
     }
 
+    result(result){
+        console.log(result);
+        return result;    
+    }
+
     getAll(){
         return this.connect()            
-            .then(db => {                    
+            .then(db => {
                     const result = db.collection('data').find({}).toArray();
                     db.close();
-                    return result;
+                    this.result(result);
                 })            
             .catch(err => console.log(err));
 
