@@ -4,13 +4,13 @@ class MongoDbRepository{
 
     constructor(){
         this.URL = 'mongodb://localhost:27017/data';
-        this.getAll = this.getAll.bind(this);
+        // this.getAll = this.getAll.bind(this);
     }    
 
     connect(func){
         return MongoClient.connect(this.URL)
                 .then(db => this.db = db)
-                .then(func)
+                .then(func.bind(this))
                 .then(result => { 
                         this.db.close(); 
                         return result})
