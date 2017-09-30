@@ -66,7 +66,7 @@ app.delete('/:name', (req, res)=> {
                     if(err) 
                         console.log('deleting failed')
                     else
-                        console.log(r.value.b);
+                        res.end('deletion is successful');
                 })
             res.end('thinking');
         }
