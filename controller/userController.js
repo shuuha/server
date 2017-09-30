@@ -2,7 +2,7 @@ const db = require('../models/db');
 
 class UserController{
     get(req, res){
-        console.log(db.getAll());
+        console.log('hello', db.getAll());
         const result = db.getAll();
 
         if(result.length)
