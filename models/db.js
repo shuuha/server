@@ -7,8 +7,14 @@ class MongoDbRepository{
         this.db = {};
     }    
 
-    async connect(){
-        await MongoClient.connect(this.URL, (err, db) => this.db = db);
+    connect(){
+        MongoClient.connect(this.URL, (err, db) => {
+            if(err)
+                console.log('error in connecting to db', err);
+                
+            else    
+                this.db = db;                
+        })
     }
 
     update(){
@@ -19,9 +25,14 @@ class MongoDbRepository{
         this.db.close();        
     }
 
-    async getAll(){
-        this.connect();
-            return await this.db.collection('data').find({}).toArray(err, r);
+    getAll(){
+        this.connect().
+            this.db.collection('data').find({}).toArray((err, r)=> {
+                if(err)
+                    console.log('error in getting all the data');
+                    this.db.close();                
+                    return r;
+        });
     }
 
     insert(){
