@@ -30,8 +30,9 @@ class MongoDbRepository{
         MongoClient.connect(this.URL, (err, db) => {
             if(err)
                 console.log(err);
-            else{            
-                db.collection('data').find({}).toArray((err, r)=> {
+            else{
+                this.db = db;     
+                this.db.collection('data').find({}).toArray((err, r)=> {
                     if(err)
                         console.log('error in getting all the data');
                     
