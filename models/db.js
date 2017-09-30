@@ -17,7 +17,7 @@ class MongoDbRepository{
                 .catch(this.err);
     }
 
-    update(req){
+    update(db, req){
         this.db.collection('data').updateOne({ name }, { name: 'muylaydec'}, { upsert: true});
     }
 
