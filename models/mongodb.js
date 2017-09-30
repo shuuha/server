@@ -37,8 +37,41 @@ class MongoDbRepository
         const items = await this.connection.collection('data').find({}).toArray();
         return items;
     }
+
+
+    getAllCallback = (callback) =>
+    {
+        this.connection.collection('data').find({}).toArray(callback);
+    }
 }
+
+
 
 
 const myDB = new MongoDbRepository();
 export {myDB}
+
+
+
+//inside some controller
+class SomeController
+{
+    someRequest = (req,res) =>
+    {
+        myDB.getAllCallback( ( items ) => {
+            if(items.length == 0)
+                res.end('[]')
+            else
+                res.end(JSON.stringify(items));
+        });
+    }
+
+    asyncSomeRequest = async (req, res)=>
+    {
+        const items = await myDB.getAll();
+        if(items.length == 0)
+            res.end();
+        else
+            res.end(JSON.stringify(items));
+    }
+}
