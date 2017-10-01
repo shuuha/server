@@ -19,7 +19,7 @@ class MongoDbRepository{
 
     update(reqBody){
         const { id, page } = reqBody;
-        this.db.collection('data').updateOne({ id, page }, { ...reqBody }, { upsert: true});
+        this.db.collection('data').updateOne({ id, page }, reqBody, { upsert: true});
     }
 
     err(err){
