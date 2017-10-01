@@ -23,7 +23,7 @@ class UserController{
 
     delete(req, res){        
         db.connect( ()=> db.remove(req.params))
-            .then( ({result}) => res.end('deleted a document with params: ', result));
+            .then( ({result}) => res.end(`deleted a document with params: ${JSON.stringify(req.params)}`));
     }
 }
 
