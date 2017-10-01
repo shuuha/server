@@ -17,9 +17,9 @@ class MongoDbRepository{
                 .catch(this.err);
     }
 
-    update(name){
-        console.log(name);
-        this.db.collection('data').updateOne({ name }, { name: 'muylaydec'}, { upsert: true});
+    update(reqBody){
+        const { id, page } = reqBody;
+        this.db.collection('data').updateOne({ id, page }, { reqBody }, { upsert: true});
     }
 
     err(err){
@@ -34,8 +34,9 @@ class MongoDbRepository{
      
     }
 
-    remove(){
-     
+    remove(reqParams){
+        const { name } = reqParms;
+        this.db.findOneAndDelete({ name });
     }
 }
 

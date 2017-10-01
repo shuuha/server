@@ -17,14 +17,13 @@ class UserController{
     }
 
     post(req, res){
-        const { name } = req.body;        
-
-        db.connect( () => db.update(name))
+        db.connect( () => db.update(req.body))
             .then( () => res.end('updated'));
     }
 
-    delete(){
-
+    delete(req, res){
+        db.connect( ()=> db.remove(req.params))
+            .then( () => res.end('deleted a document with params: ', req.params));
     }
 }
 
