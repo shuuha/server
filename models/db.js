@@ -35,8 +35,7 @@ class MongoDbRepository{
     }
 
     remove(reqParams){
-        const { name, id } = reqParams;
-        console.log(id);
+        const { name, id } = reqParams;        
         this.db.collection('data').deleteMany({ id });
     }
 }
