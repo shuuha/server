@@ -36,6 +36,7 @@ class MongoDbRepository{
 
     remove(reqParams){
         const { name } = reqParms;
+        console.log(reqParams, name);
         this.db.findOneAndDelete({ name });
     }
 }
