@@ -3,9 +3,8 @@ const MongoClient = require('mongodb').MongoClient;
 class MongoDbRepository{
 
     constructor(){
-        this.URL = 'mongodb://localhost:27017/data';
-        // this.getAll = this.getAll.bind(this);
-    }    
+        this.URL = 'mongodb://localhost:27017/data';        
+    }
 
     connect(func){
         return MongoClient.connect(this.URL)
@@ -22,20 +21,17 @@ class MongoDbRepository{
         this.db.collection('data').updateOne({ id, page }, reqBody, { upsert: true});
     }
 
-    err(err){
-        console.log(err)
-    }
 
     getAll(){
         return this.db.collection('data').find({}).toArray();
     }
 
-    insert(){
-        
-    }
-
     remove(reqParams){        
         return this.db.collection('data').deleteMany({ id: +reqParams.id, page: +reqParams.page });
+    }
+
+    err(err){
+        console.log(err)
     }
 }
 

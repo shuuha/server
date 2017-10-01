@@ -1,9 +1,5 @@
 const db = require('../models/db');
 
-var bodyParser = require('body-parser');
-
-
-
 class UserController{
     get(req, res){
         db.connect(db.getAll)
