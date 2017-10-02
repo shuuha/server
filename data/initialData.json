@@ -70,16 +70,6 @@
         "required" : false                                   
         }
       }
-    //     "4": {
-    //   "placeholder": "Type in some interesting stuff",       
-    //   "format" :  {     
-    //     "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",     
-    //     "numbers" : "123456789",                            
-    //     "minlength": 2,
-    //     "maxlength" : 7,
-    //     "required" : false                                   
-    //     }
-    //   } 
     }
   },
   "2": { 
