@@ -14,8 +14,7 @@ class UserController{
     // }
 
     get(req, res){
-        db.connect( () => {console.log(req.params);
-                    return db.getUser(req.params)})
+        db.connect( () => db.getUser(req.params))
             .then(r => syncData(r))
             .then(r => res.end(JSON.stringify(r)))
             .catch(err => console.log(err));

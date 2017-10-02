@@ -2,6 +2,7 @@ let initialData = require('../data/initialData');    // raw data (client skeleto
 
 function syncData(dbData){
     if(dbData.length){
+        console.log('syncdata in action', dbData);
     dbData.forEach((q, pageIndex) => { 
             q.inputs.forEach( (i, inputIndex) => {
         Object.assign(initialData[pageIndex].inputs[inputIndex].value, q.page.inputs[inputIndex].value)
