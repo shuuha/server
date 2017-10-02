@@ -23,7 +23,7 @@ class MongoDbRepository{
 
     getUser(reqParams){
         console.log(reqParams);
-        return this.db.collection('data').find({ id: +reqParams.id }).toArray();
+        return this.db.collection('data').find({ id: reqParams.id }).toArray();
     }
 
     // getAll(){            
@@ -35,7 +35,7 @@ class MongoDbRepository{
     // }    
 
     remove(reqParams){        
-        return this.db.collection('data').deleteMany({ id: reqParams.id, page: +reqParams.page });
+        return this.db.collection('data').deleteMany({ id: +reqParams.id, page: +reqParams.page });
     }
 
     err(err){
