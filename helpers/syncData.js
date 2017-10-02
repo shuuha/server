@@ -5,12 +5,12 @@ function syncData(dbData){
     if(dbData.length){        
         dbData.forEach((q, pageIndex) => { 
             q.inputs.forEach( (i, inputIndex) => {                
-                Object.assign(initialData[pageIndex].inputs[inputIndex] || {} , i)
+                Object.assign(dataTemplate[pageIndex].inputs[inputIndex] || {} , i)
             })
         })
     }
 
-    return initialData;
+    return dataTemplate;
 }
 
 module.exports = syncData;
