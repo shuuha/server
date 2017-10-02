@@ -22,7 +22,7 @@ class MongoDbRepository{
     }
 
     getUser(reqParams){
-        return this.db.collection('data').find({ id: reqParams.id }).toArray();
+        return this.db.collection('data').find({ id: +reqParams.id }).toArray();
     }
 
     // getAll(){            
