@@ -9,6 +9,7 @@ function syncData(dbData){
             })
         })
     }
+    console.log(dataTemplate);
 
     return dataTemplate;
 }
