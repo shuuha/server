@@ -2,9 +2,11 @@ let initialData = require('../data/initialData');    // raw data (client skeleto
 
 function syncData(dbData){        
 
-    if(dbData.length){
-        dbData.inputs.forEach((i) => {             
-                Object.assign(initialData[dbData.page].inputs || {} , i);
+    if(dbData.length){        
+        dbData.forEach((q, pageIndex) => { 
+            q.inputs.forEach( (i, inputIndex) => {                
+                Object.assign(initialData[pageIndex].inputs[inputIndex] || {} , i)
+            })
         })
     }
 
