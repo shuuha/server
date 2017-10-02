@@ -8,6 +8,7 @@
   "inputs": {
     "0": {
       "label": "Sign 1",
+      "value": "",
       "placeholder": "Input type 1",      
       "format" :  {     
         "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ", 
@@ -28,6 +29,7 @@
   "inputs": {
     "0": {
       "label": "Sign number 1",
+      "value": "",
       "placeholder": "Input type 1",       
       "format" :  {
         "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ", 
@@ -39,6 +41,7 @@
     },
     "1": {
       "label": "Sign number 2",
+      "value": "",
       "placeholder": "Input Type 1",       
       "format" :  {
         "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",       
@@ -50,6 +53,7 @@
       },
     "2": {
       "label": "Sign number 3",
+      "value": "",
       "placeholder": "Type in some ",       
       "format" :  {     
         "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",       
@@ -73,14 +77,15 @@
     }
   },
   "2": { 
-  "page": 2,                
+  "page": 2,
   "nextPage": 3,            
   "nextLabel" : "Move further",    
   "header" : "Page 3",
   "type" : 2,
   "inputs": {
     "0": {
-      "text": "Required for this question is true",   
+      "label": "Required for this question is true",
+      "value": "",
         "required" : true                                       
       } 
     }
@@ -94,6 +99,7 @@
   "inputs": {
     "0": {
       "label": "Page 3, sign number 1",
+      "value": "",
       "placeholder": "Input type 1",      
       "format" :  {     
         "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         
@@ -113,7 +119,8 @@
   "type" : 2,
   "inputs": {
     "0": {
-      "text": "Required field in this question is false",   
+      "label": "Required field in this question is false",
+      "value": "",
         "required" : false                                       
       } 
     }
