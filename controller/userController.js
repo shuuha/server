@@ -1,16 +1,27 @@
 const db = require('../models/db');
 
-class UserController{
-    get(req, res){
-        db.connect(db.getAll)
-            .then(result => {
-                if(result.length)
-                    res.end(JSON.stringify(result));
+const syncData = require('../helpers/syncData');
 
-                else 
-                    res.end('nothing found');
-            })
+class UserController{
+    // get(req, res){
+    //     db.connect(db.getAll)
+    //         .then(result => {
+    //             if(result.length)
+    //                 res.end(JSON.stringify(result));
+    //             else 
+    //                 res.end('nothing found');
+    //         })
+    // }
+
+    get(req, res){        
+        db.connect(db.getUser(req.params))
+            .then(r => {
+                if(result.length)
+                    return syncData(result)})
+            .then(r => res.end(JSON.stringify(r)))
+            .catch(err => console.log(err));
     }
+
 
     post(req, res){
         db.connect( () => db.update(req.body))

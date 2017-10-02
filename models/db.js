@@ -21,10 +21,17 @@ class MongoDbRepository{
         this.db.collection('data').updateOne({ id, page }, reqBody, { upsert: true});
     }
 
-
-    getAll(){
-        return this.db.collection('data').find({}).toArray();
+    getUser(reqParams){
+        return this.db.collection('data').find({ id: reqParams.id }).toArray();
     }
+
+    // getAll(){            
+    //     return this.db.collection('data').find({}).toArray();
+    // }
+
+    // getOne(reqParams){        
+    //     return this.db.collection('data').findOne({ id: reqParams.id })
+    // }    
 
     remove(reqParams){        
         return this.db.collection('data').deleteMany({ id: +reqParams.id, page: +reqParams.page });
