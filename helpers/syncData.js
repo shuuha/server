@@ -11,7 +11,7 @@ function syncData(dbData){
     //         })
     //     }
     // })
-
+    console.log('syncData in action');
     dbData.forEach((q, pageIndex) => { 
             q.inputs.forEach( (i, inputIndex) => {
         Object.assign(initialData[pageIndex].inputs[inputIndex].value, q.page.inputs[inputIndex].value)
