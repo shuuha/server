@@ -18,5 +18,7 @@ function syncData(dbData){
         })
     })   
 
+    console.log(initialData);
+
     return initialData;
 }
