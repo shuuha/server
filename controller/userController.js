@@ -13,7 +13,8 @@ class UserController{
     //         })
     // }
 
-    get(req, res){        
+    get(req, res){
+        console.log(syncData);
         db.connect( () => db.getUser(req.params))
             .then(r => {
                 if(r.length)

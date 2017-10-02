@@ -22,3 +22,5 @@ function syncData(dbData){
 
     return initialData;
 }
+
+module.exports = syncData;
