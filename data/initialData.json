@@ -1,17 +1,17 @@
 {
   "0": { 
-  "page": 0,                  // current page id
-  "nextPage": 1,              // next page id
-  "nextLabel" : "continue",     // continue button label
+  "page": 0,                  
+  "nextPage": 1,              
+  "nextLabel" : "continue",   
   "header" : "Page 1",        
-  "type" : 1,               //  1 - inputs,   2 - yes no questions
+  "type" : 1,               
   "inputs": {
     "0": {
       "label": "Sign 1",
       "placeholder": "Input type 1",      
       "format" :  {     
-        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         // norwegian caracters
-        "numbers" : "123456789",                               // numbers
+        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ", 
+        "numbers" : "123456789",                        
         "minlength": 2,
         "maxlength" : 7,
         "required" : true
@@ -30,8 +30,8 @@
       "label": "Sign number 1",
       "placeholder": "Input type 1",       
       "format" :  {
-        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         // norwegian caracters
-        "numbers" : "123456789 ",                               // numbers        
+        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ", 
+        "numbers" : "123456789 ",                       
         "minlength": 2,
         "maxlength" : 7,
         "required" : true                                       
@@ -41,8 +41,8 @@
       "label": "Sign number 2",
       "placeholder": "Input Type 1",       
       "format" :  {
-        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         // norwegian caracters
-        "numbers" : "123456789 ",                               // numbers        
+        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",       
+        "numbers" : "123456789 ",                             
         "minlength": 2,
         "maxlength" : 7,
         "required" : true                                       
@@ -52,8 +52,8 @@
       "label": "Sign number 3",
       "placeholder": "Type in some ",       
       "format" :  {     
-        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         // norwegian caracters
-        "numbers" : "123456789",                               // numbers        
+        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",       
+        "numbers" : "123456789",                              
         "minlength": 2,
         "maxlength" : 7,
         "required" : false                                   
@@ -63,8 +63,8 @@
         "label": "Sign number 4",
       "placeholder": "Type in some ",       
       "format" :  {     
-        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         // norwegian caracters
-        "numbers" : "123456789",                               // numbers        
+        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",        
+        "numbers" : "123456789",                               
         "minlength": 2,
         "maxlength" : 7,
         "required" : false                                   
@@ -73,8 +73,8 @@
     //     "4": {
     //   "placeholder": "Type in some interesting stuff",       
     //   "format" :  {     
-    //     "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         // norwegian caracters
-    //     "numbers" : "123456789",                               // numbers        
+    //     "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",     
+    //     "numbers" : "123456789",                            
     //     "minlength": 2,
     //     "maxlength" : 7,
     //     "required" : false                                   
@@ -90,24 +90,24 @@
   "type" : 2,
   "inputs": {
     "0": {
-      "text": "Required for this question is true",   // question field      
+      "text": "Required for this question is true",   
         "required" : true                                       
       } 
     }
   },  
   "3": { 
-  "page": 3,                  // current page id
-  "nextPage": 4,              // next page id
-  "nextLabel" : "Let's move",     // continue button label
+  "page": 3,                  
+  "nextPage": 4,              
+  "nextLabel" : "Let's move",     
   "header" : "Page 4",        
-  "type" : 1,               //  1 - inputs,   2 - yes no questions
+  "type" : 1,               
   "inputs": {
     "0": {
       "label": "Page 3, sign number 1",
       "placeholder": "Input type 1",      
       "format" :  {     
-        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         // norwegian caracters
-        "numbers" : "123456789",                               // numbers
+        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         
+        "numbers" : "123456789",                               
         "minlength": 2,
         "maxlength" : 7,
         "required" : true
@@ -123,10 +123,9 @@
   "type" : 2,
   "inputs": {
     "0": {
-      "text": "Required field in this question is false",   // question field      
+      "text": "Required field in this question is false",   
         "required" : false                                       
       } 
     }
   }
 }
-
