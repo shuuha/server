@@ -1,4 +1,4 @@
-let initialData = require('../data/data');    // raw data (client skeleton )
+let initialData = require('../data/initialData');    // raw data (client skeleton )
 
 function syncData(dbData){
     // const dataNew = {};
