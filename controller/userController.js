@@ -3,22 +3,22 @@ const db = require('../models/db');
 const syncData = require('../helpers/syncData');
 
 class UserController{
-    // get(req, res){
-    //     db.connect(db.getAll)
-    //         .then(result => {
-    //             if(result.length)
-    //                 res.end(JSON.stringify(result));
-    //             else 
-    //                 res.end('nothing found');
-    //         })
-    // }
-
     get(req, res){
-        db.connect( () => db.getUser(req.params))
-            .then(r => syncData(r))
-            .then(r => res.end(JSON.stringify(r)))
-            .catch(err => console.log(err));
+        db.connect(db.getAll)
+            .then(result => {
+                if(result.length)
+                    res.end(JSON.stringify(result));
+                else 
+                    res.end('nothing found');
+            })
     }
+
+    // get(req, res){
+    //     db.connect( () => db.getUser(req.params))
+    //         .then(r => syncData(r))
+    //         .then(r => res.end(JSON.stringify(r)))
+    //         .catch(err => console.log(err));
+    // }
 
     post(req, res){
         db.connect( () => db.update(req.body))
