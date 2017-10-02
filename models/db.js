@@ -25,9 +25,9 @@ class MongoDbRepository{
         return this.db.collection('data').find({ id: +reqParams.id }).toArray();
     }
 
-    getAll(){            
-        return this.db.collection('data').find({}).toArray();
-    }
+    // getAll(){            
+    //     return this.db.collection('data').find({}).toArray();
+    // }
 
     // getOne(reqParams){        
     //     return this.db.collection('data').findOne({ id: reqParams.id })
