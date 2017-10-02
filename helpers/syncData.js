@@ -6,7 +6,7 @@ function syncData(dbData){
     dbData.forEach((q, pageIndex) => { 
             console.log(q);
             q.inputs.forEach( (i, inputIndex) => {
-        Object.assign(initialData[pageIndex].inputs[inputIndex].value, q.inputs[inputIndex].value)
+        Object.assign(initialData[pageIndex].inputs[inputIndex].value, i.value)
             })
         })
     }
