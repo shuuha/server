@@ -22,7 +22,8 @@
     }
   },
 "1": { 
-  "page": 1,                
+  "id": 222,
+  "page": 1,
   "nextPage": 2,
   "nextLabel" : "Go on",    
   "header" : "Page 2",
@@ -30,7 +31,7 @@
   "inputs": {
     "0": {
       "label": "Sign number 1",
-      "value": "",
+      "value": "value 1",
       "placeholder": "Input type 1",       
       "format" :  {
         "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ", 
@@ -42,7 +43,7 @@
     },
     "1": {
       "label": "Sign number 2",
-      "value": "",
+      "value": "value 2",
       "placeholder": "Input Type 1",       
       "format" :  {
         "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",       
@@ -54,7 +55,7 @@
       },
     "2": {
       "label": "Sign number 3",
-      "value": "",
+      "value": "value 3",
       "placeholder": "Type in some ",       
       "format" :  {     
         "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",       
@@ -66,13 +67,14 @@
       },
           "3": {
         "label": "Sign number 4",
-      "placeholder": "Type in some ",       
-      "format" :  {     
-        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",        
-        "numbers" : "123456789",                               
-        "minlength": 2,
-        "maxlength" : 7,
-        "required" : false                                   
+        "value": "value 4",
+        "placeholder": "Type in some ",       
+        "format" :  {     
+          "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",        
+          "numbers" : "123456789",                               
+          "minlength": 2,
+          "maxlength" : 7,
+          "required" : false                                   
         }
       }
     }
