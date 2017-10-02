@@ -22,6 +22,7 @@ class MongoDbRepository{
     }
 
     getUser(reqParams){
+        console.log(reqParams);
         return this.db.collection('data').find({ id: +reqParams.id }).toArray();
     }
 
