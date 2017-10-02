@@ -20,7 +20,6 @@ class UserController{
             .catch(err => console.log(err));
     }
 
-
     post(req, res){
         db.connect( () => db.update(req.body))
             .then( () => res.end('updated'));
