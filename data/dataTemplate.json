@@ -1,7 +1,6 @@
 {
   "0": { 
-  "page": 0,
-  "id": 111,
+  "page": 0,  
   "nextPage": 1,
   "nextLabel" : "continue",   
   "header" : "Page 1",        
@@ -21,8 +20,7 @@
       }
     }
   },
-"1": { 
-  "id": 111,
+"1": {   
   "page": 1,
   "nextPage": 2,
   "nextLabel" : "Go on",    
