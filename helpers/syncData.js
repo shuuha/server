@@ -1,10 +1,10 @@
 let initialData = require('../data/initialData');    // raw data (client skeleton )
 
-function syncData(dbData){
-        console.log('syncdata in action', dbData);
+function syncData(dbData){        
 
     if(dbData.length){
     dbData.forEach((q, pageIndex) => { 
+            console.log(q);
             q.inputs.forEach( (i, inputIndex) => {
         Object.assign(initialData[pageIndex].inputs[inputIndex].value, q.inputs[inputIndex].value)
             })
