@@ -12,13 +12,14 @@ function syncData(dbData){
     //     }
     // })
     console.log('syncData in action');
+    
+    if(dbData.length){
     dbData.forEach((q, pageIndex) => { 
             q.inputs.forEach( (i, inputIndex) => {
         Object.assign(initialData[pageIndex].inputs[inputIndex].value, q.page.inputs[inputIndex].value)
+            })
         })
-    })   
-
-    console.log(initialData);
+    }
 
     return initialData;
 }
