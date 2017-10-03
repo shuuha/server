@@ -125,5 +125,79 @@
         "required" : false                                       
       } 
     }
+  },
+
+  "5": { 
+  "page": 5,                
+  "nextPage": 6,            
+  "nextLabel" : "again",    
+  "header" : "Page 6",
+  "type" : 2,
+  "inputs": {
+    "0": {
+      "label": "Do you anwnser yes?",
+      "value": "",
+        "required" : true                                       
+      } 
+    }
+  },
+  "6": { 
+  "page": 6,                
+  "nextPage": 7,            
+  "nextLabel" : "once more",    
+  "header" : "Page 7",
+  "type" : 2,
+  "inputs": {
+    "0": {
+      "label": "Wath about another?",   
+      "value": "",
+        "required" : true                                       
+      } 
+    }
+  },
+  "7": { 
+  "page": 7,                
+  "nextPage": 8,            
+  "nextLabel" : "Is this correct?",    
+  "header" : "Page 2",
+  "type" : 1,       
+  "inputs": {
+    "0": {
+      "label": "Sign number 1",
+      "value": "",
+      "placeholder": "Input type 1",       
+      "format" :  {
+        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         
+        "numbers" : "123456789 ",                               
+        "minlength": 2,
+        "maxlength" : 7,
+        "required" : true
+      }
+    },
+    "1": {
+      "label": "info got from server",
+      "value": "Prefilled info",
+      "placeholder": "Prefilled info",
+      "format" :  {
+        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         
+        "numbers" : "123456789 ",                               
+        "minlength": 2,
+        "maxlength" : 7,
+        "required" : true
+       }
+      },
+    "2": {
+      "label": "info got from server",
+      "placeholder": "Add a note",
+      "value": "",      
+      "format" :  {
+        "characters" : "ABCDEFGHIJKLMNOPQRSTVUWXYZØÆÅ",         
+        "numbers" : "123456789 ",                               
+        "minlength": 2,
+        "maxlength" : 7,
+        "required" : true
+      } 
+    }
   }
+}
 }
